@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Comment do
   before(:each) do
-  	@comment = FactoryGirl.create(:comment)
+    @comment = FactoryGirl.create(:comment)
   end
 
   it "has a score" do

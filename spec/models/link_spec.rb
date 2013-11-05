@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Link do
   before(:each) do
-  	@link = FactoryGirl.create(:link)
+    @link = FactoryGirl.create(:link)
   end
 
   it "has a url" do
@@ -14,16 +14,16 @@ describe Link do
   end
 
   it "belongs to a user" do
-  	user = FactoryGirl.create(:user)
-  	user.links << @link
+    user = FactoryGirl.create(:user)
+    user.links << @link
 
-  	@link.user.should == user
+    @link.user.should == user
   end
 
   context "with comments" do
-  	before(:each) do
-  		@link = FactoryGirl.create(:link_with_comment)
-  	end
+    before(:each) do
+      @link = FactoryGirl.create(:link_with_comment)
+    end
 
     it "has a comment" do
       
@@ -44,6 +44,8 @@ describe Link do
       comment.vote_up
       @link.comments<<comment
       comment.save
+     
+     
       comment2 = FactoryGirl.create(:comment )
       @link.comments<<comment2
       comment2.vote_up
@@ -51,6 +53,7 @@ describe Link do
       comment2.save
       
       @link.reload
+
       @link.score.should == 7
 
     end

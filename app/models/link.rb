@@ -4,9 +4,11 @@ class Link < ActiveRecord::Base
 
 
 #this method only updates the link's score when the 
-#comment is saved. I did this method because 
+#comment is saved. Previously I did another method which 
+#incremented the link's score right when the vote_up method 
+#is called. I did this method because when
 #everone else on google chat seemed to prefer the 
-#after save method, so I went with the crowd 
+#after save method
 # 
 def compute_score
 	self.score = 0
@@ -17,16 +19,6 @@ def compute_score
 	self.reload
 end
 
-#this methos is called when a the vote_up method is
-#called. I think the the score of the link should be 
-#updated right when the score of the comment is increased
-def another_method_to_add_scores
-	if self.score==0
-		self.score=2
-	else 
-		self.score+=1
-	end	
-	self.save
-end
+
 
 end

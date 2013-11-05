@@ -5,18 +5,16 @@ after_save :add_score
 
 
   def vote_up 
-  	self.score=self.score+1
-  	if self.link!=nil
-  		self.link.another_method_to_add_scores
-    end
+    self.score=self.score+1
+    
   end
 
   def add_score
-  	if self.link!=nil
-  		self.link.compute_score
-  	end
-  	
-  end
+    if self.link!=nil
+      self.link.compute_score
+    end
+    
+   end
 
 
 end
