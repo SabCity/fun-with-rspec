@@ -4,7 +4,7 @@ class Link < ActiveRecord::Base
 
 
 #this method only updates the link's score when the 
-#comment is saved. I did this method because when
+#comment is saved. I did this method because 
 #everone else on google chat seemed to prefer the 
 #after save method, so I went with the crowd 
 # 
