@@ -6,7 +6,7 @@ class Link < ActiveRecord::Base
 #this method only updates the link's score when the 
 #comment is saved. Previously I did another method which 
 #incremented the link's score right when the vote_up method 
-#is called. I did this method because when
+#is called. I did this method because 
 #everone else on google chat seemed to prefer the 
 #after save method
 # 
